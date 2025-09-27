@@ -101,3 +101,28 @@ TRUNCATE TABLE minions_info;
 
 --16 Drop the Table
 DROP TABLE minions_birthdays;
+
+--17.0 create db
+CREATE DATABASE mini_db;
+--17 Drop database
+DROP DATABASE mini_db WITH (FORCE);
+
+--18 bonus
+CREATE TYPE address AS (
+street VARCHAR(100),
+city VARCHAR(50),
+zip_code CHAR(4)
+);
+
+CREATE TABLE custumers(
+id SERIAL PRIMARY KEY,
+name VARCHAR(50),
+customer_address address
+);
+
+INSERT INTO 
+	customers(name, customer_address)
+VALUES
+	('pesho', ('maritsa', 'Sofia', '1600'));
+
+SELECT * FROM customers;
